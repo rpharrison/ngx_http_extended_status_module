@@ -1,11 +1,45 @@
-﻿# Nginx Module: extended_status
+# Nginx Module: extended_status
 
-This module provides additional status information by extending the build-in 
+This module provides additional status information by extending the build-in
 Nginx `status` module with finer details.
 
-*Note: This module is not distributed with the Nginx source. Details on 
-installation, including patching the Nginx source and compiling Nginx with this 
+*Note: This module is not distributed with the Nginx source. Details on
+installation, including patching the Nginx source and compiling Nginx with this
 module, as well as configuration instructions and examples, can be found below.*
+
+# Deprecated (EOL)
+
+**As of 2015-03-10, this fork of
+[ngx_http_extended_status_module](https://github.com/nginx-modules/ngx_http_extended_status_module)
+will no longer be maintained or updated for use with
+[Scribe](https://scribe.software)'s systems.**
+
+Moving forward, we have decided to *heavily fork* this module into its own, new,
+and distinct codebase at
+[scribenet/nginx-servats-module](https://github.com/scribenet/nginx-servats-module).
+
+This new repository will begin as simply a re-write of the code, with the
+following set of requirements:
+
+- Apply a rigid coding standard through its implementation.
+- The addition of a simple testing framework that allows for Travis continuous
+  integration.
+- A brand-new internal theme (suitable for 2015), that is user-customizable.
+- After reaching feature-parity with its predecessor, it will break patch
+  compatibility by offing additional features and capabilities outside the scope
+  currently offer by the `extended_status` module.
+
+If you have no interest in the goals outlined above and would simply like the
+original module, moving forward you will find the latest code at
+[nginx-modules/ngx_http_extended_status_module](https://github.com/nginx-modules/ngx_http_extended_status_module).
+
+Otherwise, we invite you to take a look at the development being done on the new
+module at [scribenet/nginx-servats-module](https://github.com/scribenet/nginx-servats-module),
+including the addition of [Travis CI support](https://nginx-servats-module.docs.scribe.tools/ci),
+beautiful Read the Docs generated [documentation](https://nginx-servats-module.docs.scribe.tools/docs),
+as well as the new look-and-feel.
+
+*The original contents of this README.md follow.*
 
 # Contents
 
@@ -43,7 +77,7 @@ command (replacing `x.x.x` with the correct version string):
 patch -p1 < extended_status-x.x.x.patch
 ```
 
-As an example, to patch Nginx `0.8.54`/`0.8.55`, `1.0.11`, or `1.7.10`, you 
+As an example, to patch Nginx `0.8.54`/`0.8.55`, `1.0.11`, or `1.7.10`, you
 would run one of the following commands, respectively:
 
 ```
@@ -82,8 +116,8 @@ to further customize the build process.*
 If you are attempting to use this module with a version of Nginx that does not
 have a pre-made `patch` file, it is suggest you proceed as follows.
 
-- Determine the closest matching patch file available (for example, if you 
-  wanted to compile this module against Nginx 1.7.6, you would choose the 
+- Determine the closest matching patch file available (for example, if you
+  wanted to compile this module against Nginx 1.7.6, you would choose the
   [1.7.8](extended_status-1.7.8.patch) patch file).
 - Attempt to apply the patch per the above instructions.
 - If the patch operation *does not succeed* and outputs errors about being
@@ -91,13 +125,13 @@ have a pre-made `patch` file, it is suggest you proceed as follows.
   - Create a copy of the patch file you started with (named appropriately for
     the version of Nginx you are trying to compile).
   - Review the source code and patch file to determine the required changes.
-  - Update the patch file and re-attempt to apply it once you believe you have 
+  - Update the patch file and re-attempt to apply it once you believe you have
     satisfied any errors.
 - Otherwise, if the patch operation *succeeds without error*:
   - It is possible the patch is valid against your version of Nginx.
-  - It is recommended you verify the results of the patch by looking over the 
+  - It is recommended you verify the results of the patch by looking over the
     resulting Nginx source code.
-- Perform the installation as described below and verify Nginx both *compiles* 
+- Perform the installation as described below and verify Nginx both *compiles*
   and *runs*, and that the *module behaves as expected*.
 
 *Please: If you take the time to do this, please either submit an issue stating
@@ -136,7 +170,7 @@ The following individuals authored the bulk of this module:
 * 李金虎 <beagem@163.com>
 * Heumgeun Kang <heumgeun.kang@nhn.com> (original author)
 
-A list of all the individuals who have contributed can be found by visiting the 
+A list of all the individuals who have contributed can be found by visiting the
 [contributors page](https://github.com/nginx-modules/ngx_http_extended_status_module/graphs/contributors).
 
 ## License
