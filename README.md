@@ -1,4 +1,4 @@
-# Nginx Module: extended_status
+# Nginx Module: extended_status [![Build Status](https://travis-ci.org/nginx-modules/ngx_http_extended_status_module.svg?branch=master)](https://travis-ci.org/nginx-modules/ngx_http_extended_status_module)
 
 This module provides additional status information by extending the build-in
 Nginx `status` module with finer details.
